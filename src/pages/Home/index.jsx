@@ -6,6 +6,8 @@ import { Container, Brand, Menu, Search, Content, NewNote } from "./styles"
 import { Header } from "../../components/header"
 import { ButtonText } from "../../components/ButtonText"
 import { Input } from "../../components/Input"
+import { Section } from "../../components/Section"
+import { Note } from "../../components/Notes"
 export function Home() {
   return (
     <Container>
@@ -17,7 +19,7 @@ export function Home() {
 
       <Menu>
         <li>
-          <ButtonText title="Todos" isActive/>
+          <ButtonText title="Todos" isActive />
         </li>
         <li>
           <ButtonText title="React" />
@@ -28,13 +30,24 @@ export function Home() {
       </Menu>
 
       <Search>
-        <Input placeholder="Pesquisar Pelo Título" icon={FiSearch}/>
+        <Input placeholder="Pesquisar Pelo Título" icon={FiSearch} />
       </Search>
 
-      <Content></Content>
+      <Content>
+        <Section title="Minhas Notas">
+          <Note data={{
+              title: "React",
+              tags: [
+                { id: "1", name: "React" },
+                { id: "2", name: "Node" }
+              ],
+            }}
+          />
+        </Section>
+      </Content>
 
       <NewNote>
-        <FiPlus/>
+        <FiPlus />
         Criar Nota
       </NewNote>
     </Container>
