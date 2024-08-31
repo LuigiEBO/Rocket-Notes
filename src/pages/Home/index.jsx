@@ -1,5 +1,6 @@
 import {FiPlus, FiSearch} from 'react-icons/fi'
 
+
 import { Container, Brand, Menu, Search, Content, NewNote } from "./styles"
 
 
@@ -35,21 +36,23 @@ export function Home() {
 
       <Content>
         <Section title="Minhas Notas">
-          <Note data={{
+          <Note
+            data={{
               title: "React",
               tags: [
                 { id: "1", name: "React" },
-                { id: "2", name: "Node" }
+                { id: "2", name: "Node" },
               ],
             }}
           />
         </Section>
       </Content>
 
-      <NewNote>
-        <FiPlus />
-        Criar Nota
-      </NewNote>
+      
+        <NewNote to="/new">
+          <FiPlus />
+          Criar Nota
+        </NewNote>
     </Container>
   )
 }
